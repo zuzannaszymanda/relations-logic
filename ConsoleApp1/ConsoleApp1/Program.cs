@@ -8,6 +8,7 @@ namespace ConsoleApp1
 {
     class Program
     {
+        static int count = 0;
         static void PrintArray(int[,] tab)
         {
             Console.WriteLine();
@@ -53,6 +54,7 @@ namespace ConsoleApp1
             if (isValid)
             {
                 PrintArray(tab);
+                count++;
             }
         }
 
@@ -81,6 +83,7 @@ namespace ConsoleApp1
             int n;
             do
             {
+                count = 0;
                 Console.Clear();
                 Console.WriteLine("\nPROGRAM DEFINIUJĄCY RELACJE ZWROTNE I SYMETRYCZNE DLA PODANEGO N (MAX 5)");
                 Console.WriteLine("\n\t****************************\n");
@@ -96,6 +99,7 @@ namespace ConsoleApp1
                 Console.Clear();
                 Console.WriteLine("Relacje zwrotne i symetryczne dla n = {0}:", n);
                 MakeRelations(tab, n, 0, 0);
+                Console.WriteLine("\nLiczba relacji zwrotnych i symetrycznych dla n = {0}: {1}", n, count);
                 Console.WriteLine("\nAby zakończyć wciśnij klawisz Esc");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
