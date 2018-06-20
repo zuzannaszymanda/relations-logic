@@ -75,5 +75,10 @@ Program ma do wyboru 3 opcje:
         
      3.4. Jeśli każde pole w macierzy spełnia zadany warunek macierz jest wypisywana jako wynik.
      
-     ##### Przykład działania programu dla n = 2:
-     
+##### Przykład działania programu dla n = 2:
+
+![symmetric](img/symmetric.PNG)
+
+![reflexive](img/reflexive.PNG)
+
+![both](img/both.PNG)
