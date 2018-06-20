@@ -9,6 +9,8 @@ namespace ConsoleApp1
     class Program
     {
         static int count = 0;
+        static int option = 0;
+
         static void PrintArray(int[,] tab)
         {
             Console.WriteLine();
@@ -22,15 +24,65 @@ namespace ConsoleApp1
             }
         }
 
-        static void CheckRelation(int[,] tab)
+        static void CheckRelationSymmetric(int[,] tab)
         {
-            //Console.WriteLine("Check");
             bool isValid = true;
             for (int i = 0; i < tab.GetLength(1); i++)
             {
                 for (int j = 0; j < tab.GetLength(0); j++)
                 {
-                    //Console.WriteLine("{0}, {1}, value {2}, {3}", i, j, tab[i,j],tab[j,i]);
+                    if (i != j)
+                    {
+                        if (tab[i, j] != tab[j, i])
+                        {
+                            isValid = false;
+                            break;
+                        }
+                    }
+                }
+                if (!isValid)
+                    break;
+            }
+            if (isValid)
+            {
+                PrintArray(tab);
+                count++;
+            }
+        }
+
+        static void CheckRelationReflexive(int[,] tab)
+        {
+            bool isValid = true;
+            for (int i = 0; i < tab.GetLength(1); i++)
+            {
+                for (int j = 0; j < tab.GetLength(0); j++)
+                {
+                    if (i == j)
+                    {
+                        if (tab[i, j] != 1)
+                        {
+                            isValid = false;
+                            break;
+                        }
+                    }                   
+                }
+                if (!isValid)
+                    break;
+            }
+            if (isValid)
+            {
+                PrintArray(tab);
+                count++;
+            }
+        }
+
+        static void CheckRelationBoth(int[,] tab)
+        {
+            bool isValid = true;
+            for (int i = 0; i < tab.GetLength(1); i++)
+            {
+                for (int j = 0; j < tab.GetLength(0); j++)
+                {
                     if (i == j)
                     {
                         if (tab[i, j] != 1)
@@ -46,7 +98,7 @@ namespace ConsoleApp1
                             isValid = false;
                             break;
                         }
-                    }                      
+                    }
                 }
                 if (!isValid)
                     break;
@@ -70,9 +122,14 @@ namespace ConsoleApp1
                 return;
             }
             tab[row,column] = 1;
-            MakeRelations(tab, n,row + 1, column); //start with a fresh counter
-            CheckRelation(tab);
-            tab[row, column] = 0; //try with false at the given coordinates
+            MakeRelations(tab, n,row + 1, column);
+            if (option == 1)
+                CheckRelationSymmetric(tab);
+            else if (option == 2)
+                CheckRelationReflexive(tab);
+            else if(option == 3)
+                CheckRelationBoth(tab);
+            tab[row, column] = 0;
             MakeRelations(tab, n, row + 1, column);
             return;
 
@@ -87,8 +144,17 @@ namespace ConsoleApp1
                 Console.Clear();
                 Console.WriteLine("\nPROGRAM DEFINIUJĄCY RELACJE ZWROTNE I SYMETRYCZNE DLA PODANEGO N (MAX 5)");
                 Console.WriteLine("\n\t****************************\n");
-                
-                Console.Write("Podaj n dla jakiego mają zostać zdefiniowane relacje (2-5): ");
+                Console.WriteLine("1. Relacje symetryczne");
+                Console.WriteLine("2. Relacje zwrotne");
+                Console.WriteLine("3. Relacje symetryczne i zwrotne");
+                Console.Write("\nWybierz opcję: ");
+                do
+                {
+                    Int32.TryParse(Console.ReadLine(), out option);
+                    if (option != 1 && option!= 2 && option != 3)
+                        Console.Write("Wybierz opcję 1 - 3: ");
+                } while (option != 1 && option != 2 && option != 3);
+                Console.Write("\nPodaj n dla jakiego mają zostać zdefiniowane relacje (2 - 5): ");
                 do
                 {
                     Int32.TryParse(Console.ReadLine(), out n);
@@ -97,9 +163,24 @@ namespace ConsoleApp1
                 } while (n < 2 || n > 5);
                 int[,] tab = new int[n, n];
                 Console.Clear();
-                Console.WriteLine("Relacje zwrotne i symetryczne dla n = {0}:", n);
+                if (option == 1)
+                {
+                    Console.WriteLine("Relacje symetryczne dla n = {0}:", n);
+                    CheckRelationSymmetric(tab);
+                }
+                else if (option == 2)
+                {
+                    Console.WriteLine("Relacje zwrotne dla n = {0}:", n);
+                    CheckRelationReflexive(tab);
+                }
+                    
+                else if (option == 3)
+                {
+                    Console.WriteLine("Relacje symetrycze i zwrotne dla n = {0}:", n);
+                    CheckRelationBoth(tab);
+                }
                 MakeRelations(tab, n, 0, 0);
-                Console.WriteLine("\nLiczba relacji zwrotnych i symetrycznych dla n = {0}: {1}", n, count);
+                Console.WriteLine("\nLiczba relacji dla n = {0}: {1}", n, count);
                 Console.WriteLine("\nAby zakończyć wciśnij klawisz Esc");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
