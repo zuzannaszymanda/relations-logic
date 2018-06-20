@@ -14,13 +14,14 @@ namespace ConsoleApp1
         static void PrintArray(int[,] tab)
         {
             Console.WriteLine();
+            Console.Write("\t");
             for (int i = 0; i < tab.GetLength(1); i++)
             {
                 for (int j = 0; j < tab.GetLength(0); j++)
                 {
                     Console.Write("{0} ", tab[i, j]);
                 }
-                Console.Write("\n");
+                Console.Write("\n\t");
             }
         }
 
