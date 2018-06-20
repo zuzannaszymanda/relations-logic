@@ -7,11 +7,18 @@ Relacje binarne dla zbioru elementów o rozmiarze n są w programie reprezentowa
 
 **Przykład zapisu relacji**
 
+Przykładowa relacja zwrotna i symetryczna dla n = 4:
+
 ![picture](graphchart.jpg)
 
+Reprezentacja relacji w programie:
+
 1 0 1 0
+
 0 1 0 0
+
 1 0 1 1
+
 0 0 1 1
 
 Pary uporządkowane:
