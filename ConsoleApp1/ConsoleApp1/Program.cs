@@ -147,13 +147,16 @@ namespace ConsoleApp1
                 Console.WriteLine("1. Relacje symetryczne");
                 Console.WriteLine("2. Relacje zwrotne");
                 Console.WriteLine("3. Relacje symetryczne i zwrotne");
+                Console.WriteLine("4. Zakończ program");
                 Console.Write("\nWybierz opcję: ");
                 do
                 {
                     Int32.TryParse(Console.ReadLine(), out option);
-                    if (option != 1 && option!= 2 && option != 3)
-                        Console.Write("Wybierz opcję 1 - 3: ");
-                } while (option != 1 && option != 2 && option != 3);
+                    if (option == 4)
+                        return;
+                    if (option != 1 && option!= 2 && option != 3 && option != 4)
+                        Console.Write("Wybierz opcję 1 - 4: ");
+                } while (option != 1 && option != 2 && option != 3 && option != 4);
                 Console.Write("\nPodaj n dla jakiego mają zostać zdefiniowane relacje (2 - 5): ");
                 do
                 {
