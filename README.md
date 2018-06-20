@@ -9,7 +9,7 @@ Relacje binarne dla zbioru elementów o rozmiarze n są w programie reprezentowa
 
 Przykładowa relacja zwrotna i symetryczna dla n = 4:
 
-![picture](graphchart.jpg)
+![picture](img/graphchart.jpg)
 
 Reprezentacja relacji w programie:
 
@@ -31,5 +31,5 @@ Pary uporządkowane:
 <a3,a4>
 
 **Własności relacji - zwrotność**
-Jako relację zwrotną określamy taką relację, gdzie 
+Jako relację zwrotną określamy taką relację, gdzie ![picture2](img/1.png)
 
