@@ -65,12 +65,15 @@ Program ma do wyboru 3 opcje:
     
     2.5. Następnie pole macierzy dla aktualnych indeksów zostaje ponownie ustawione na 0: _M[indeks_wiersza,indeks_kolumny]_ = 0 i funkcja zostaje wywołana dla kolejnej pozycji w kolumnie, czyli  _indeksu_wiersza_ + 1 i _indeksu_kolumny_.
     
-    3. Sprawdzanie czy macierz spełnia zadany warunek:
+3. Sprawdzanie czy macierz spełnia zadany warunek:
     
-        3.1. Symetryczności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza jest różny od indeksu_kolumny sprawdzane jest, czy wartości pól M[indeks_wiersza,indeks_kolumny] i M[indeks_kolumny,indeks_wiersza] są takie same. Jeśli nie, oznacza to, że relacja nie jest symetryczna.
+     3.1. Symetryczności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza jest różny od indeksu_kolumny sprawdzane jest, czy wartości pól M[indeks_wiersza,indeks_kolumny] i M[indeks_kolumny,indeks_wiersza] są takie same. Jeśli nie, oznacza to, że relacja nie jest symetryczna.
         
-        3.2. Zwrotności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza i indek_kolumny jest równy sprawdzane jest, czy wartość pola M[indeks_wiersza,indeks_kolumny] jest równa 1. Jeśli nie, oznacza to, że relacja nie jest zwrotna.
+     3.2. Zwrotności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza i indek_kolumny jest równy sprawdzane jest, czy wartość pola M[indeks_wiersza,indeks_kolumny] jest równa 1. Jeśli nie, oznacza to, że relacja nie jest zwrotna.
         
-        3.3. Symetryczności i zwrotności - sprawdzane są oba powyższe warunki.
+     3.3. Symetryczności i zwrotności - sprawdzane są oba powyższe warunki.
         
-        3.4. Jeśli każde pole w macierzy spełnia zadany warunek macierz jest wypisywana jako wynik.
+     3.4. Jeśli każde pole w macierzy spełnia zadany warunek macierz jest wypisywana jako wynik.
+     
+     ##### Przykład działania programu dla n = 2:
+     
