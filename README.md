@@ -63,7 +63,7 @@ W pierwszym kroku należy wybrać opcję, a następnie podać n dla jakiego maj�
     
     2.3. Jeśli powyższe warunki nie są spełnione, pole macierzy dla aktualnych indeksów zostaje ustawione na 1: _M[indeks_wiersza,indeks_kolumny]_ = 1 i funkcja wywołana zostaje dla kolejnej pozycji w kolumnie, czyli _indeksu_wiersza_ + 1 i _indeksu_kolumny_.
     
-    2.4. W kolejnym kroku, w zależności od wybranej opcji, sprawdzane jest czy akualna macierz spełnia warunki dla relacji symetrycznej, zwrotnej lub obu **(patrz punkt 3)**.
+    2.4. W kolejnym kroku, w zależności od wybranej opcji, sprawdzane jest czy aktualna macierz spełnia warunki dla relacji symetrycznej, zwrotnej lub obu **(patrz punkt 3)**.
     
     2.5. Następnie pole macierzy dla aktualnych indeksów zostaje ponownie ustawione na 0: _M[indeks_wiersza,indeks_kolumny]_ = 0 i funkcja zostaje wywołana dla kolejnej pozycji w kolumnie, czyli  _indeksu_wiersza_ + 1 i _indeksu_kolumny_.
     
@@ -71,7 +71,7 @@ W pierwszym kroku należy wybrać opcję, a następnie podać n dla jakiego maj�
     
      3.1. Symetryczności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza jest różny od indeksu_kolumny sprawdzane jest, czy wartości pól M[indeks_wiersza,indeks_kolumny] i M[indeks_kolumny,indeks_wiersza] są takie same. Jeśli nie, oznacza to, że relacja nie jest symetryczna.
         
-     3.2. Zwrotności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza i indek_kolumny jest równy sprawdzane jest, czy wartość pola M[indeks_wiersza,indeks_kolumny] jest równa 1. Jeśli nie, oznacza to, że relacja nie jest zwrotna.
+     3.2. Zwrotności - przechodząc kolumny, dla każdego pola gdzie indeks_wiersza i indeks_kolumny jest równy sprawdzane jest, czy wartość pola M[indeks_wiersza,indeks_kolumny] jest równa 1. Jeśli nie, oznacza to, że relacja nie jest zwrotna.
         
      3.3. Symetryczności i zwrotności - sprawdzane są oba powyższe warunki.
         
