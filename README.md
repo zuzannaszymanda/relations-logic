@@ -49,6 +49,8 @@ Program ma do wyboru 3 opcje:
 - zdefiniowanie relacji zwrotnych,
 - zdefiniowanie relacji symetrycznych i zwrotnych.
 
+W pierwszym kroku należy wybrać opcję, a następnie podać n dla jakiego mają zostać zdefiniowane relacje.
+
 **Algorytm**
 
 1. Dla zadanego n tworzona jest macierz n x n wypełniona zerami, która jest przekazywana jako argument do głównej funkcji rekurencyjnej tworzącej wszystkie możliwe kombinacje zer i jedynek w tej macierzy.
